@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -27,12 +28,50 @@ namespace Comp229_Assign04
             PrepareModelCollection();
         }
 
+        // reads data from JSON file and sets it models IEnumerable
         public void PrepareModelCollection()
         {
             using (StreamReader streamReader = new StreamReader(System.Web.Hosting.HostingEnvironment.MapPath(modelsJsonFilePath)))
             {
                 var jsonString = streamReader.ReadToEnd();
                 Models = JsonConvert.DeserializeObject<List<Model>>(jsonString);
+            }
+        }
+
+        // sends updated json file to the user
+        public static void EmailJsonFile(string clientEmailAddress, string clientName, string attachmentFileName)
+        {
+            SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com", 587);
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+            MailMessage message = new MailMessage();
+            try
+            {
+                MailAddress fromAddress = new MailAddress("cc-comp229f2016@outlook.com", "Comp229-Assign04");
+                MailAddress toAddress = new MailAddress(clientEmailAddress, clientName);
+                message.From = fromAddress;
+                message.To.Add(toAddress);
+                message.Subject = "Comp229-Assign04 email";
+                message.Body = "This is the body of a sample message";
+
+                smtpClient.Host = "smtp-mail.outlook.com";
+                smtpClient.EnableSsl = true;
+
+                // SET UseDefaultCredentials to false BEFORE setting Credentials - we all have 'ugh' moments
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new System.Net.NetworkCredential("cc-comp229f2016@outlook.com", "comp229pwd");
+
+                System.Net.Mime.ContentType contentType = new System.Net.Mime.ContentType();
+                contentType.MediaType = System.Net.Mime.MediaTypeNames.Application.Octet;
+                contentType.Name = attachmentFileName;
+                message.Attachments.Add(new Attachment(System.Web.Hosting.HostingEnvironment.MapPath(updatedJsonFilePath), contentType));
+
+                smtpClient.Send(message);
+                //statusLabel.Text = "Email sent.";
+            }
+            catch (Exception ex)
+            {
+                //statusLabel.Text = "Coudn't send the message!";
             }
         }
     }

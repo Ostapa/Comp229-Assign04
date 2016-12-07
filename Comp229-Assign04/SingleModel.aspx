@@ -3,7 +3,7 @@
 <asp:Content ContentPlaceHolderID="MainContent" ID="Content" runat="server">
     <div class="container well">
         <h1 class="display-2"><asp:Label ID="nameLbl" runat="server" /></h1>
-        <asp:Image CssClass="col-md-4 col-sx-12" ID="heroImage" runat="server" />
+        <asp:Image CssClass="col-md-4 col-sx-12" Width="200px" ID="modelImage" runat="server" />
                 <table class="table table-stripped col-md-8 col-xs-12">
                     <tr>
                         <td>Faction: </td>
@@ -26,30 +26,32 @@
                          <td><asp:Label ID="deploymentZonelbl" runat="server" /></td>
                     </tr>
                     <tr>
-                        <td>Traits</td>
-                        <td><asp:Repeater ID="traitsRepeater" runat="server">
+                        <td>Traits: </td>
+                        <asp:Repeater ID="traitsRepeater" runat="server">
                             <ItemTemplate>
                                 <td><%# Container.DataItem.ToString() %></td> 
                             </ItemTemplate>
-                        </asp:Repeater></td>
+                        </asp:Repeater>
                     </tr>
                     <tr>
-                        <td>Types</td>
-                        <td><asp:Repeater ID="typesRepeate" runat="server">
+                        <td>Types: </td>
+                        <asp:Repeater ID="typesRepeate" runat="server">
                             <ItemTemplate>
                                 <td><%# Container.DataItem.ToString() %></td> 
                             </ItemTemplate>
-                        </asp:Repeater></td>
+                        </asp:Repeater>
                     </tr>
                     <tr>
                         <td>Defensive chart</td>
-                        <td><asp:Repeater ID="defenseChartRepeater" runat="server">
-                            <ItemTemplate>
+                    </tr>
+                    <asp:Repeater ID="defenseChartRepeater" runat="server">
+                        <ItemTemplate>
+                            <tr>
                                 <td><%# (10 - Container.ItemIndex).ToString() %></td> 
                                 <td><%# Container.DataItem.ToString() %></td>
-                            </ItemTemplate>
-                        </asp:Repeater></td>
-                    </tr>
+                            </tr>
+                        </ItemTemplate>
+                    </asp:Repeater>
                     <tr>
                         <td>Mobility</td>
                          <td><asp:Label ID="mobilityLbl" runat="server" /></td>
@@ -68,32 +70,30 @@
                     </tr>
                     <tr>
                         <td>Actions</td>
-                        <td>
-                            <asp:Repeater ID="actionsRepeater" runat="server" >
-                                <ItemTemplate>
-                                    <tr>
-                                        <td>Name: </td>
-                                        <td><%# Eval("name") %></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Type: </td>
-                                        <td><%# Eval("type") %></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Rating: </td>
-                                        <td><%# Eval("rating") %></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Range: </td>
-                                        <td><%# Eval("range") %></td>
-                                    </tr>
-                                </ItemTemplate>
-                            </asp:Repeater>
-                        </td>
+                        <asp:Repeater ID="actionsRepeater" runat="server" >
+                            <ItemTemplate>
+                                <tr>
+                                    <td>Name: </td>
+                                    <td><%# Eval("name") %></td>
+                                </tr>
+                                <tr>
+                                    <td>Type: </td>
+                                    <td><%# Eval("type") %></td>
+                                </tr>
+                                <tr>
+                                    <td>Rating: </td>
+                                    <td><%# Eval("rating") %></td>
+                                </tr>
+                                <tr>
+                                    <td>Range: </td>
+                                    <td><%# Eval("range") %></td>
+                                </tr>
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </tr>
                     <tr>
                         <td>Special Abilities</td>
-                        <td><asp:Repeater ID="specialAbilitiesRepeater" runat="server">
+                        <asp:Repeater ID="specialAbilitiesRepeater" runat="server">
                             <ItemTemplate>
                                 <tr>
                                     <td>Name: </td>
@@ -104,7 +104,7 @@
                                     <td><%# Eval("description") %></td>
                                 </tr>
                             </ItemTemplate>
-                        </asp:Repeater></td>
+                        </asp:Repeater>
                     </tr>
                 </table>
     </div>

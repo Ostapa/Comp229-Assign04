@@ -13,8 +13,8 @@ namespace Comp229_Assign04
         Model _Model;
         protected void Page_Load(object sender, EventArgs e)
         {
-            var name = "Union Worker"; //Request.QueryString["name"];
-            var faction = "Teknes"; //Request.QueryString["fraction"];
+            var name = Request.QueryString["name"];
+            var faction = Request.QueryString["faction"];
 
             _Model = Global.Models.FirstOrDefault(tModel => tModel.name == name && tModel.faction == faction);
 
@@ -51,6 +51,9 @@ namespace Comp229_Assign04
 
             specialAbilitiesRepeater.DataSource = _Model.specialAbilities;
             specialAbilitiesRepeater.DataBind();
+
+            // aet image url
+            modelImage.ImageUrl = _Model.imageUrl;
 
 
         }
