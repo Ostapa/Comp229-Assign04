@@ -38,6 +38,15 @@ namespace Comp229_Assign04
             }
         }
 
+        // create a new JSON file 
+        public static void UpdateModelCollection()
+        {
+            using (StreamWriter streamwriter = new StreamWriter(System.Web.Hosting.HostingEnvironment.MapPath(updatedJsonFilePath)))
+            {
+                streamwriter.WriteLine(JsonConvert.SerializeObject(Models));
+            }
+        }
+
         // sends updated json file to the user
         public static void EmailJsonFile(string clientEmailAddress, string clientName, string attachmentFileName)
         {

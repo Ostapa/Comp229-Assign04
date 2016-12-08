@@ -11,17 +11,20 @@ namespace Comp229_Assign04
     public partial class SingleModel : System.Web.UI.Page
     {
         Model _Model;
+        string name;
+        string faction;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            var name = Request.QueryString["name"];
-            var faction = Request.QueryString["faction"];
+            name = Request.QueryString["name"];
+            faction = Request.QueryString["faction"];
 
             _Model = Global.Models.FirstOrDefault(tModel => tModel.name == name && tModel.faction == faction);
 
             SetBindings();
         }
 
-        private void SetBindings()
+        public void SetBindings()
         {
             // assign values to a proper label
             nameLbl.Text = _Model.name;
@@ -40,8 +43,8 @@ namespace Comp229_Assign04
             traitsRepeater.DataSource = _Model.traits;
             traitsRepeater.DataBind();
 
-            typesRepeate.DataSource = _Model.types;
-            typesRepeate.DataBind();
+            typesRepeater.DataSource = _Model.types;
+            typesRepeater.DataBind();
 
             defenseChartRepeater.DataSource = _Model.defenseChart;
             defenseChartRepeater.DataBind();
@@ -52,10 +55,24 @@ namespace Comp229_Assign04
             specialAbilitiesRepeater.DataSource = _Model.specialAbilities;
             specialAbilitiesRepeater.DataBind();
 
-            // aet image url
+            // set image url
             modelImage.ImageUrl = _Model.imageUrl;
+        }
 
+        protected void updateBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(string.Format("UpdatePage.aspx?name={0}&faction={1}", name, faction));
+        }
 
+        protected void deleteBtn_Click(object sender, EventArgs e)
+        {
+            var newList = Global.Models.Where(tModel => tModel.name != name && tModel.faction != faction);
+            Global.Models = newList;
+            Global.UpdateModelCollection();
+            Response.Redirect("HomePage.aspx");
         }
     }
 }
+
+
+ 

@@ -10,16 +10,16 @@
 namespace Comp229_Assign04 {
     
     
-    public partial class SingleModel {
+    public partial class UpdatePage {
         
         /// <summary>
-        /// nameLbl control.
+        /// nameTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nameLbl;
+        protected global::System.Web.UI.WebControls.TextBox nameTxt;
         
         /// <summary>
         /// modelImage control.
@@ -31,49 +31,49 @@ namespace Comp229_Assign04 {
         protected global::System.Web.UI.WebControls.Image modelImage;
         
         /// <summary>
-        /// factionLbl control.
+        /// factionTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label factionLbl;
+        protected global::System.Web.UI.WebControls.TextBox factionTxt;
         
         /// <summary>
-        /// rankLbl control.
+        /// rankTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label rankLbl;
+        protected global::System.Web.UI.WebControls.TextBox rankTxt;
         
         /// <summary>
-        /// baseLbl control.
+        /// baseTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label baseLbl;
+        protected global::System.Web.UI.WebControls.TextBox baseTxt;
         
         /// <summary>
-        /// sizeLbl control.
+        /// sizeTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label sizeLbl;
+        protected global::System.Web.UI.WebControls.TextBox sizeTxt;
         
         /// <summary>
-        /// deploymentZonelbl control.
+        /// deploymentZoneTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label deploymentZonelbl;
+        protected global::System.Web.UI.WebControls.TextBox deploymentZoneTxt;
         
         /// <summary>
         /// traitsRepeater control.
@@ -103,40 +103,40 @@ namespace Comp229_Assign04 {
         protected global::System.Web.UI.WebControls.Repeater defenseChartRepeater;
         
         /// <summary>
-        /// mobilityLbl control.
+        /// mobilityTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label mobilityLbl;
+        protected global::System.Web.UI.WebControls.TextBox mobilityTxt;
         
         /// <summary>
-        /// willpowerLbl control.
+        /// willpowerTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label willpowerLbl;
+        protected global::System.Web.UI.WebControls.TextBox willpowerTxt;
         
         /// <summary>
-        /// resilianceLbl control.
+        /// resilianceTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label resilianceLbl;
+        protected global::System.Web.UI.WebControls.TextBox resilianceTxt;
         
         /// <summary>
-        /// woundsLbl control.
+        /// woundsTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label woundsLbl;
+        protected global::System.Web.UI.WebControls.TextBox woundsTxt;
         
         /// <summary>
         /// actionsRepeater control.
@@ -157,21 +157,21 @@ namespace Comp229_Assign04 {
         protected global::System.Web.UI.WebControls.Repeater specialAbilitiesRepeater;
         
         /// <summary>
-        /// updateBtn control.
+        /// saveBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button updateBtn;
+        protected global::System.Web.UI.WebControls.Button saveBtn;
         
         /// <summary>
-        /// deleteBtn control.
+        /// cancelBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button deleteBtn;
+        protected global::System.Web.UI.WebControls.Button cancelBtn;
     }
 }
