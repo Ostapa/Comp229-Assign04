@@ -11,6 +11,12 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 
+/*******************\
+    Ostap Hamarnyk
+    Assign 04
+    Comp229-007
+\*******************/
+
 namespace Comp229_Assign04
 {
     public class Global : HttpApplication

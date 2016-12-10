@@ -6,8 +6,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+/*******************\
+    Ostap Hamarnyk
+    Assign 04
+    Comp229-007
+\*******************/
 namespace Comp229_Assign04
 {
+
     // you were right, a lot of typing
     public partial class UpdatePage : System.Web.UI.Page
     {
@@ -20,7 +26,7 @@ namespace Comp229_Assign04
             faction = Request.QueryString["faction"];
             _Model = Global.Models.FirstOrDefault(tModel => tModel.name == name && tModel.faction == faction);
 
-            if (!IsPostBack)
+            if (!IsPostBack && _Model != null)
             {
                 BindData();
             }
@@ -57,7 +63,7 @@ namespace Comp229_Assign04
             specialAbilitiesRepeater.DataSource = _Model.specialAbilities;
             specialAbilitiesRepeater.DataBind();
 
-            // aet image url
+            // set image url
             modelImage.ImageUrl = _Model.imageUrl;
         }
 

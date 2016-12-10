@@ -1,5 +1,11 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SingleModel.aspx.cs" Inherits="Comp229_Assign04.SingleModel" %>
 
+<%-----------------
+    Ostap Hamarnyk
+    Assign 04
+    Comp229-007
+ -----------------%>
+
 <asp:Content ContentPlaceHolderID="MainContent" ID="Content" runat="server">
     <div class="container well">
         <h1 class="display-2"><asp:Label ID="nameLbl" runat="server" /></h1>

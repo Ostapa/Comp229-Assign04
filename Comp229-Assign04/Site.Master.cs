@@ -8,6 +8,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 
+/*******************\
+    Ostap Hamarnyk
+    Assign 04
+    Comp229-007
+\*******************/
+
 namespace Comp229_Assign04
 {
     public partial class SiteMaster : MasterPage
@@ -69,7 +75,26 @@ namespace Comp229_Assign04
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string path = HttpContext.Current.Request.Url.AbsolutePath;
+            System.IO.FileInfo info = new System.IO.FileInfo(path);
+            switch (info.Name)
+            {
+                case "HomePage":
+                    Page.Title = "Home";
+                    break;
+                case "SingleModel":
+                    Page.Title = "Model";
+                    break;
+                case "UpdatePage":
+                    Page.Title = "Update";
+                    break;
+                case "CreateModel":
+                    Page.Title = "Create Model";
+                    break;
+                default:
+                    Page.Title = "Error";
+                    break;
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

@@ -1,7 +1,12 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
 body {
+    background-color: #e0c9a1;
     padding-top: 50px;
     padding-bottom: 20px;
+}
+
+.container.well {
+    background-color:#e7d3ae;
 }
 
 /* Wrapping element */

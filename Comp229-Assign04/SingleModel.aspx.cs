@@ -6,6 +6,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+/*******************\
+    Ostap Hamarnyk
+    Assign 04
+    Comp229-007
+\*******************/
+
 namespace Comp229_Assign04
 {
     public partial class SingleModel : System.Web.UI.Page
@@ -20,8 +26,10 @@ namespace Comp229_Assign04
             faction = Request.QueryString["faction"];
 
             _Model = Global.Models.FirstOrDefault(tModel => tModel.name == name && tModel.faction == faction);
-
-            SetBindings();
+            if(!IsPostBack && _Model != null)
+            {
+                SetBindings();
+            }
         }
 
         public void SetBindings()

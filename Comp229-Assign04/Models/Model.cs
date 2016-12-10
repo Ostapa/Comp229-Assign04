@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+/*******************\
+    Ostap Hamarnyk
+    Assign 04
+    Comp229-007
+\*******************/
+
 namespace Comp229_Assign04.Models
 {
     public class Model
